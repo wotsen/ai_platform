@@ -28,3 +28,12 @@
 [submodule "service/third_party/util_time"]
 	path = service/third_party/util_time
 	url = https://github.com/wotsen/c-time
+[submodule "website"]
+	path = website
+	url = https://github.com/wotsen/learning_platform_website
+[submodule "client"]
+	path = client
+	url = https://github.com/wotsen/learning_platform_client
+[submodule "server"]
+	path = server
+	url = https://github.com/wotsen/learning_platform_server
