@@ -37,8 +37,8 @@ void encode(Sdk &msg)
 
     /***********************************************************/
     body->mutable_user_session()->set_user_type(UserSessionMsg_UserMethod_U_LOGIN);
-    body->mutable_user_session()->mutable_user()->set_user_name("test");
-    body->mutable_user_session()->mutable_user()->set_user_pass("123");
+    body->mutable_user_session()->mutable_user()->set_user_name("admin");
+    body->mutable_user_session()->mutable_user()->set_user_pass("admin");
     body->mutable_user_session()->mutable_user()->set_permission(U_PERMISSION_ADMIN);
     body->mutable_user_session()->mutable_user()->set_email("astralrovers@outlook.com");
     body->mutable_user_session()->mutable_user()->set_phone("12345678901");
