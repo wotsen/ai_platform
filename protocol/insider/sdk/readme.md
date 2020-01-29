@@ -6,9 +6,11 @@
 
 ## 1. 目录说明
 
-- `sdk_network`为`sdk`网络
-- `sdk_protocol`为`sdk`协议
-- `sdk_tree`为`sdk`节点树
+- `in_sdk`为`sdk`协议文档
+- `sdk_cpp_code`为`sdk`对应的`c++`实现
+- `sdk_js_code`为`sdk`对应的`javascript`实现
+- `sdk_python_code`为`sdk`对应的`python`实现
+- `sdk_test`为`sdk`测试代码
 
 ## 2.`sdk`协议详细设计
 
