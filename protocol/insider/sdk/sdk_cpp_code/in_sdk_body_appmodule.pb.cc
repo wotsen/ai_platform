@@ -77,7 +77,7 @@ static void InitDefaultsscc_info_AppModuleCoutInfoList_in_5fsdk_5fbody_5fappmodu
       &scc_info_AppModuleCoutInfo_in_5fsdk_5fbody_5fappmodule_2eproto.base,}};
 
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_in_5fsdk_5fbody_5fappmodule_2eproto[3];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_in_5fsdk_5fbody_5fappmodule_2eproto[3];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_in_5fsdk_5fbody_5fappmodule_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_in_5fsdk_5fbody_5fappmodule_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_in_5fsdk_5fbody_5fappmodule_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -87,6 +87,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_in_5fsdk_5fbody_5fappmodule_2e
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::insider::sdk::AppModuleBaseInfo, name_),
+  PROTOBUF_FIELD_OFFSET(::insider::sdk::AppModuleBaseInfo, type_),
+  PROTOBUF_FIELD_OFFSET(::insider::sdk::AppModuleBaseInfo, identifier_),
   PROTOBUF_FIELD_OFFSET(::insider::sdk::AppModuleBaseInfo, enable_),
   PROTOBUF_FIELD_OFFSET(::insider::sdk::AppModuleBaseInfo, state_),
   PROTOBUF_FIELD_OFFSET(::insider::sdk::AppModuleBaseInfo, permission_),
@@ -107,8 +109,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_in_5fsdk_5fbody_5fappmodule_2e
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::insider::sdk::AppModuleBaseInfo)},
-  { 9, -1, sizeof(::insider::sdk::AppModuleCoutInfo)},
-  { 17, -1, sizeof(::insider::sdk::AppModuleCoutInfoList)},
+  { 11, -1, sizeof(::insider::sdk::AppModuleCoutInfo)},
+  { 19, -1, sizeof(::insider::sdk::AppModuleCoutInfoList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -119,24 +121,28 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_in_5fsdk_5fbody_5fappmodule_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\033in_sdk_body_appmodule.proto\022\013insider.s"
-  "dk\"\226\001\n\021AppModuleBaseInfo\022\014\n\004name\030\001 \001(\t\022\016"
-  "\n\006enable\030\002 \001(\010\022*\n\005state\030\003 \001(\0162\033.insider."
-  "sdk.AppModuleState\0227\n\npermission\030\004 \001(\0162#"
-  ".insider.sdk.AppModuleCfgPermission\"\205\001\n\021"
-  "AppModuleCoutInfo\022\n\n\002id\030\001 \001(\r\0221\n\trun_sta"
-  "te\030\002 \001(\0162\036.insider.sdk.AppModuleRunState"
-  "\0221\n\tbase_info\030\003 \001(\0132\036.insider.sdk.AppMod"
-  "uleBaseInfo\"L\n\025AppModuleCoutInfoList\0223\n\013"
-  "app_modules\030\001 \003(\0132\036.insider.sdk.AppModul"
-  "eCoutInfo*p\n\016AppModuleState\022\025\n\021E_APP_MOD"
-  "ULE_IDLE\020\000\022\025\n\021E_APP_MODULE_INIT\020\001\022\032\n\026E_A"
-  "PP_MODULE_INSTALLED\020\002\022\024\n\020E_APP_MODULE_BA"
-  "D\020\003*m\n\021AppModuleRunState\022\032\n\026E_APP_MODULE"
-  "_RUN_ST_OK\020\000\022\033\n\027E_APP_MODULE_RUN_ST_ERR\020"
-  "\001\022\037\n\033E_APP_MODULE_RUN_ST_UNKNOWN\020\002*k\n\026Ap"
-  "pModuleCfgPermission\022&\n\"E_APP_MODULE_CFG"
-  "_PERMISSION_ENABLE\020\000\022)\n%E_APP_MODULE_CFG"
-  "_PERMISSION_DISENABLE\020\001b\006proto3"
+  "dk\"\324\001\n\021AppModuleBaseInfo\022\014\n\004name\030\001 \001(\t\022("
+  "\n\004type\030\002 \001(\0162\032.insider.sdk.AppModuleType"
+  "\022\022\n\nidentifier\030\003 \001(\r\022\016\n\006enable\030\004 \001(\010\022*\n\005"
+  "state\030\005 \001(\0162\033.insider.sdk.AppModuleState"
+  "\0227\n\npermission\030\006 \001(\0162#.insider.sdk.AppMo"
+  "duleCfgPermission\"\205\001\n\021AppModuleCoutInfo\022"
+  "\n\n\002id\030\001 \001(\r\0221\n\trun_state\030\002 \001(\0162\036.insider"
+  ".sdk.AppModuleRunState\0221\n\tbase_info\030\003 \001("
+  "\0132\036.insider.sdk.AppModuleBaseInfo\"L\n\025App"
+  "ModuleCoutInfoList\0223\n\013app_modules\030\001 \003(\0132"
+  "\036.insider.sdk.AppModuleCoutInfo*p\n\016AppMo"
+  "duleState\022\025\n\021E_APP_MODULE_IDLE\020\000\022\025\n\021E_AP"
+  "P_MODULE_INIT\020\001\022\032\n\026E_APP_MODULE_INSTALLE"
+  "D\020\002\022\024\n\020E_APP_MODULE_BAD\020\003*m\n\021AppModuleRu"
+  "nState\022\032\n\026E_APP_MODULE_RUN_ST_OK\020\000\022\033\n\027E_"
+  "APP_MODULE_RUN_ST_ERR\020\001\022\037\n\033E_APP_MODULE_"
+  "RUN_ST_UNKNOWN\020\002*k\n\026AppModuleCfgPermissi"
+  "on\022&\n\"E_APP_MODULE_CFG_PERMISSION_ENABLE"
+  "\020\000\022)\n%E_APP_MODULE_CFG_PERMISSION_DISENA"
+  "BLE\020\001*U\n\rAppModuleType\022\020\n\014E_SYS_MODULE\020\000"
+  "\022\022\n\016E_THIRD_MODULE\020\001\022\r\n\tE_SYS_APP\020\002\022\017\n\013E"
+  "_THIRD_APP\020\003b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_deps[1] = {
 };
@@ -148,7 +154,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_in_
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_once;
 static bool descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto = {
-  &descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_initialized, descriptor_table_protodef_in_5fsdk_5fbody_5fappmodule_2eproto, "in_sdk_body_appmodule.proto", 751,
+  &descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_initialized, descriptor_table_protodef_in_5fsdk_5fbody_5fappmodule_2eproto, "in_sdk_body_appmodule.proto", 900,
   &descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_once, descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_sccs, descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_in_5fsdk_5fbody_5fappmodule_2eproto::offsets,
   file_level_metadata_in_5fsdk_5fbody_5fappmodule_2eproto, 3, file_level_enum_descriptors_in_5fsdk_5fbody_5fappmodule_2eproto, file_level_service_descriptors_in_5fsdk_5fbody_5fappmodule_2eproto,
@@ -203,6 +209,22 @@ bool AppModuleCfgPermission_IsValid(int value) {
   }
 }
 
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AppModuleType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_in_5fsdk_5fbody_5fappmodule_2eproto);
+  return file_level_enum_descriptors_in_5fsdk_5fbody_5fappmodule_2eproto[3];
+}
+bool AppModuleType_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -225,18 +247,18 @@ AppModuleBaseInfo::AppModuleBaseInfo(const AppModuleBaseInfo& from)
   if (!from._internal_name().empty()) {
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
-  ::memcpy(&enable_, &from.enable_,
+  ::memcpy(&type_, &from.type_,
     static_cast<size_t>(reinterpret_cast<char*>(&permission_) -
-    reinterpret_cast<char*>(&enable_)) + sizeof(permission_));
+    reinterpret_cast<char*>(&type_)) + sizeof(permission_));
   // @@protoc_insertion_point(copy_constructor:insider.sdk.AppModuleBaseInfo)
 }
 
 void AppModuleBaseInfo::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AppModuleBaseInfo_in_5fsdk_5fbody_5fappmodule_2eproto.base);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&enable_, 0, static_cast<size_t>(
+  ::memset(&type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&permission_) -
-      reinterpret_cast<char*>(&enable_)) + sizeof(permission_));
+      reinterpret_cast<char*>(&type_)) + sizeof(permission_));
 }
 
 AppModuleBaseInfo::~AppModuleBaseInfo() {
@@ -264,9 +286,9 @@ void AppModuleBaseInfo::Clear() {
   (void) cached_has_bits;
 
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(&enable_, 0, static_cast<size_t>(
+  ::memset(&type_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&permission_) -
-      reinterpret_cast<char*>(&enable_)) + sizeof(permission_));
+      reinterpret_cast<char*>(&type_)) + sizeof(permission_));
   _internal_metadata_.Clear();
 }
 
@@ -284,24 +306,39 @@ const char* AppModuleBaseInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool enable = 2;
+      // .insider.sdk.AppModuleType type = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::insider::sdk::AppModuleType>(val));
+        } else goto handle_unusual;
+        continue;
+      // uint32 identifier = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          identifier_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool enable = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           enable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .insider.sdk.AppModuleState state = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // .insider.sdk.AppModuleState state = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_state(static_cast<::insider::sdk::AppModuleState>(val));
         } else goto handle_unusual;
         continue;
-      // .insider.sdk.AppModuleCfgPermission permission = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+      // .insider.sdk.AppModuleCfgPermission permission = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
           _internal_set_permission(static_cast<::insider::sdk::AppModuleCfgPermission>(val));
@@ -343,24 +380,37 @@ failure:
         1, this->_internal_name(), target);
   }
 
-  // bool enable = 2;
-  if (this->enable() != 0) {
+  // .insider.sdk.AppModuleType type = 2;
+  if (this->type() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_enable(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_type(), target);
   }
 
-  // .insider.sdk.AppModuleState state = 3;
+  // uint32 identifier = 3;
+  if (this->identifier() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_identifier(), target);
+  }
+
+  // bool enable = 4;
+  if (this->enable() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_enable(), target);
+  }
+
+  // .insider.sdk.AppModuleState state = 5;
   if (this->state() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      3, this->_internal_state(), target);
+      5, this->_internal_state(), target);
   }
 
-  // .insider.sdk.AppModuleCfgPermission permission = 4;
+  // .insider.sdk.AppModuleCfgPermission permission = 6;
   if (this->permission() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_permission(), target);
+      6, this->_internal_permission(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -386,18 +436,31 @@ size_t AppModuleBaseInfo::ByteSizeLong() const {
         this->_internal_name());
   }
 
-  // bool enable = 2;
+  // .insider.sdk.AppModuleType type = 2;
+  if (this->type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+  }
+
+  // uint32 identifier = 3;
+  if (this->identifier() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_identifier());
+  }
+
+  // bool enable = 4;
   if (this->enable() != 0) {
     total_size += 1 + 1;
   }
 
-  // .insider.sdk.AppModuleState state = 3;
+  // .insider.sdk.AppModuleState state = 5;
   if (this->state() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_state());
   }
 
-  // .insider.sdk.AppModuleCfgPermission permission = 4;
+  // .insider.sdk.AppModuleCfgPermission permission = 6;
   if (this->permission() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_permission());
@@ -438,6 +501,12 @@ void AppModuleBaseInfo::MergeFrom(const AppModuleBaseInfo& from) {
 
     name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
+  if (from.type() != 0) {
+    _internal_set_type(from._internal_type());
+  }
+  if (from.identifier() != 0) {
+    _internal_set_identifier(from._internal_identifier());
+  }
   if (from.enable() != 0) {
     _internal_set_enable(from._internal_enable());
   }
@@ -472,6 +541,8 @@ void AppModuleBaseInfo::InternalSwap(AppModuleBaseInfo* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
+  swap(type_, other->type_);
+  swap(identifier_, other->identifier_);
   swap(enable_, other->enable_);
   swap(state_, other->state_);
   swap(permission_, other->permission_);

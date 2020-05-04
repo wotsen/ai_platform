@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='insider.sdk',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x1bin_sdk_body_appmodule.proto\x12\x0binsider.sdk\"\x96\x01\n\x11\x41ppModuleBaseInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06\x65nable\x18\x02 \x01(\x08\x12*\n\x05state\x18\x03 \x01(\x0e\x32\x1b.insider.sdk.AppModuleState\x12\x37\n\npermission\x18\x04 \x01(\x0e\x32#.insider.sdk.AppModuleCfgPermission\"\x85\x01\n\x11\x41ppModuleCoutInfo\x12\n\n\x02id\x18\x01 \x01(\r\x12\x31\n\trun_state\x18\x02 \x01(\x0e\x32\x1e.insider.sdk.AppModuleRunState\x12\x31\n\tbase_info\x18\x03 \x01(\x0b\x32\x1e.insider.sdk.AppModuleBaseInfo\"L\n\x15\x41ppModuleCoutInfoList\x12\x33\n\x0b\x61pp_modules\x18\x01 \x03(\x0b\x32\x1e.insider.sdk.AppModuleCoutInfo*p\n\x0e\x41ppModuleState\x12\x15\n\x11\x45_APP_MODULE_IDLE\x10\x00\x12\x15\n\x11\x45_APP_MODULE_INIT\x10\x01\x12\x1a\n\x16\x45_APP_MODULE_INSTALLED\x10\x02\x12\x14\n\x10\x45_APP_MODULE_BAD\x10\x03*m\n\x11\x41ppModuleRunState\x12\x1a\n\x16\x45_APP_MODULE_RUN_ST_OK\x10\x00\x12\x1b\n\x17\x45_APP_MODULE_RUN_ST_ERR\x10\x01\x12\x1f\n\x1b\x45_APP_MODULE_RUN_ST_UNKNOWN\x10\x02*k\n\x16\x41ppModuleCfgPermission\x12&\n\"E_APP_MODULE_CFG_PERMISSION_ENABLE\x10\x00\x12)\n%E_APP_MODULE_CFG_PERMISSION_DISENABLE\x10\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x1bin_sdk_body_appmodule.proto\x12\x0binsider.sdk\"\xd4\x01\n\x11\x41ppModuleBaseInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0e\x32\x1a.insider.sdk.AppModuleType\x12\x12\n\nidentifier\x18\x03 \x01(\r\x12\x0e\n\x06\x65nable\x18\x04 \x01(\x08\x12*\n\x05state\x18\x05 \x01(\x0e\x32\x1b.insider.sdk.AppModuleState\x12\x37\n\npermission\x18\x06 \x01(\x0e\x32#.insider.sdk.AppModuleCfgPermission\"\x85\x01\n\x11\x41ppModuleCoutInfo\x12\n\n\x02id\x18\x01 \x01(\r\x12\x31\n\trun_state\x18\x02 \x01(\x0e\x32\x1e.insider.sdk.AppModuleRunState\x12\x31\n\tbase_info\x18\x03 \x01(\x0b\x32\x1e.insider.sdk.AppModuleBaseInfo\"L\n\x15\x41ppModuleCoutInfoList\x12\x33\n\x0b\x61pp_modules\x18\x01 \x03(\x0b\x32\x1e.insider.sdk.AppModuleCoutInfo*p\n\x0e\x41ppModuleState\x12\x15\n\x11\x45_APP_MODULE_IDLE\x10\x00\x12\x15\n\x11\x45_APP_MODULE_INIT\x10\x01\x12\x1a\n\x16\x45_APP_MODULE_INSTALLED\x10\x02\x12\x14\n\x10\x45_APP_MODULE_BAD\x10\x03*m\n\x11\x41ppModuleRunState\x12\x1a\n\x16\x45_APP_MODULE_RUN_ST_OK\x10\x00\x12\x1b\n\x17\x45_APP_MODULE_RUN_ST_ERR\x10\x01\x12\x1f\n\x1b\x45_APP_MODULE_RUN_ST_UNKNOWN\x10\x02*k\n\x16\x41ppModuleCfgPermission\x12&\n\"E_APP_MODULE_CFG_PERMISSION_ENABLE\x10\x00\x12)\n%E_APP_MODULE_CFG_PERMISSION_DISENABLE\x10\x01*U\n\rAppModuleType\x12\x10\n\x0c\x45_SYS_MODULE\x10\x00\x12\x12\n\x0e\x45_THIRD_MODULE\x10\x01\x12\r\n\tE_SYS_APP\x10\x02\x12\x0f\n\x0b\x45_THIRD_APP\x10\x03\x62\x06proto3')
 )
 
 _APPMODULESTATE = _descriptor.EnumDescriptor(
@@ -49,8 +49,8 @@ _APPMODULESTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=411,
-  serialized_end=523,
+  serialized_start=473,
+  serialized_end=585,
 )
 _sym_db.RegisterEnumDescriptor(_APPMODULESTATE)
 
@@ -76,8 +76,8 @@ _APPMODULERUNSTATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=525,
-  serialized_end=634,
+  serialized_start=587,
+  serialized_end=696,
 )
 _sym_db.RegisterEnumDescriptor(_APPMODULERUNSTATE)
 
@@ -99,12 +99,43 @@ _APPMODULECFGPERMISSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=636,
-  serialized_end=743,
+  serialized_start=698,
+  serialized_end=805,
 )
 _sym_db.RegisterEnumDescriptor(_APPMODULECFGPERMISSION)
 
 AppModuleCfgPermission = enum_type_wrapper.EnumTypeWrapper(_APPMODULECFGPERMISSION)
+_APPMODULETYPE = _descriptor.EnumDescriptor(
+  name='AppModuleType',
+  full_name='insider.sdk.AppModuleType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='E_SYS_MODULE', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='E_THIRD_MODULE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='E_SYS_APP', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='E_THIRD_APP', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=807,
+  serialized_end=892,
+)
+_sym_db.RegisterEnumDescriptor(_APPMODULETYPE)
+
+AppModuleType = enum_type_wrapper.EnumTypeWrapper(_APPMODULETYPE)
 E_APP_MODULE_IDLE = 0
 E_APP_MODULE_INIT = 1
 E_APP_MODULE_INSTALLED = 2
@@ -114,6 +145,10 @@ E_APP_MODULE_RUN_ST_ERR = 1
 E_APP_MODULE_RUN_ST_UNKNOWN = 2
 E_APP_MODULE_CFG_PERMISSION_ENABLE = 0
 E_APP_MODULE_CFG_PERMISSION_DISENABLE = 1
+E_SYS_MODULE = 0
+E_THIRD_MODULE = 1
+E_SYS_APP = 2
+E_THIRD_APP = 3
 
 
 
@@ -132,22 +167,36 @@ _APPMODULEBASEINFO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='enable', full_name='insider.sdk.AppModuleBaseInfo.enable', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='state', full_name='insider.sdk.AppModuleBaseInfo.state', index=2,
-      number=3, type=14, cpp_type=8, label=1,
+      name='type', full_name='insider.sdk.AppModuleBaseInfo.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='permission', full_name='insider.sdk.AppModuleBaseInfo.permission', index=3,
-      number=4, type=14, cpp_type=8, label=1,
+      name='identifier', full_name='insider.sdk.AppModuleBaseInfo.identifier', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='enable', full_name='insider.sdk.AppModuleBaseInfo.enable', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='insider.sdk.AppModuleBaseInfo.state', index=4,
+      number=5, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='permission', full_name='insider.sdk.AppModuleBaseInfo.permission', index=5,
+      number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -165,7 +214,7 @@ _APPMODULEBASEINFO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=45,
-  serialized_end=195,
+  serialized_end=257,
 )
 
 
@@ -209,8 +258,8 @@ _APPMODULECOUTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=198,
-  serialized_end=331,
+  serialized_start=260,
+  serialized_end=393,
 )
 
 
@@ -240,10 +289,11 @@ _APPMODULECOUTINFOLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=333,
-  serialized_end=409,
+  serialized_start=395,
+  serialized_end=471,
 )
 
+_APPMODULEBASEINFO.fields_by_name['type'].enum_type = _APPMODULETYPE
 _APPMODULEBASEINFO.fields_by_name['state'].enum_type = _APPMODULESTATE
 _APPMODULEBASEINFO.fields_by_name['permission'].enum_type = _APPMODULECFGPERMISSION
 _APPMODULECOUTINFO.fields_by_name['run_state'].enum_type = _APPMODULERUNSTATE
@@ -255,6 +305,7 @@ DESCRIPTOR.message_types_by_name['AppModuleCoutInfoList'] = _APPMODULECOUTINFOLI
 DESCRIPTOR.enum_types_by_name['AppModuleState'] = _APPMODULESTATE
 DESCRIPTOR.enum_types_by_name['AppModuleRunState'] = _APPMODULERUNSTATE
 DESCRIPTOR.enum_types_by_name['AppModuleCfgPermission'] = _APPMODULECFGPERMISSION
+DESCRIPTOR.enum_types_by_name['AppModuleType'] = _APPMODULETYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 AppModuleBaseInfo = _reflection.GeneratedProtocolMessageType('AppModuleBaseInfo', (_message.Message,), {

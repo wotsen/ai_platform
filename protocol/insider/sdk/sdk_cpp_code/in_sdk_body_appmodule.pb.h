@@ -154,6 +154,33 @@ inline bool AppModuleCfgPermission_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<AppModuleCfgPermission>(
     AppModuleCfgPermission_descriptor(), name, value);
 }
+enum AppModuleType : int {
+  E_SYS_MODULE = 0,
+  E_THIRD_MODULE = 1,
+  E_SYS_APP = 2,
+  E_THIRD_APP = 3,
+  AppModuleType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  AppModuleType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool AppModuleType_IsValid(int value);
+constexpr AppModuleType AppModuleType_MIN = E_SYS_MODULE;
+constexpr AppModuleType AppModuleType_MAX = E_THIRD_APP;
+constexpr int AppModuleType_ARRAYSIZE = AppModuleType_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* AppModuleType_descriptor();
+template<typename T>
+inline const std::string& AppModuleType_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, AppModuleType>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function AppModuleType_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    AppModuleType_descriptor(), enum_t_value);
+}
+inline bool AppModuleType_Parse(
+    const std::string& name, AppModuleType* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<AppModuleType>(
+    AppModuleType_descriptor(), name, value);
+}
 // ===================================================================
 
 class AppModuleBaseInfo :
@@ -263,9 +290,11 @@ class AppModuleBaseInfo :
 
   enum : int {
     kNameFieldNumber = 1,
-    kEnableFieldNumber = 2,
-    kStateFieldNumber = 3,
-    kPermissionFieldNumber = 4,
+    kTypeFieldNumber = 2,
+    kIdentifierFieldNumber = 3,
+    kEnableFieldNumber = 4,
+    kStateFieldNumber = 5,
+    kPermissionFieldNumber = 6,
   };
   // string name = 1;
   void clear_name();
@@ -283,7 +312,25 @@ class AppModuleBaseInfo :
   std::string* _internal_mutable_name();
   public:
 
-  // bool enable = 2;
+  // .insider.sdk.AppModuleType type = 2;
+  void clear_type();
+  ::insider::sdk::AppModuleType type() const;
+  void set_type(::insider::sdk::AppModuleType value);
+  private:
+  ::insider::sdk::AppModuleType _internal_type() const;
+  void _internal_set_type(::insider::sdk::AppModuleType value);
+  public:
+
+  // uint32 identifier = 3;
+  void clear_identifier();
+  ::PROTOBUF_NAMESPACE_ID::uint32 identifier() const;
+  void set_identifier(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_identifier() const;
+  void _internal_set_identifier(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // bool enable = 4;
   void clear_enable();
   bool enable() const;
   void set_enable(bool value);
@@ -292,7 +339,7 @@ class AppModuleBaseInfo :
   void _internal_set_enable(bool value);
   public:
 
-  // .insider.sdk.AppModuleState state = 3;
+  // .insider.sdk.AppModuleState state = 5;
   void clear_state();
   ::insider::sdk::AppModuleState state() const;
   void set_state(::insider::sdk::AppModuleState value);
@@ -301,7 +348,7 @@ class AppModuleBaseInfo :
   void _internal_set_state(::insider::sdk::AppModuleState value);
   public:
 
-  // .insider.sdk.AppModuleCfgPermission permission = 4;
+  // .insider.sdk.AppModuleCfgPermission permission = 6;
   void clear_permission();
   ::insider::sdk::AppModuleCfgPermission permission() const;
   void set_permission(::insider::sdk::AppModuleCfgPermission value);
@@ -316,6 +363,8 @@ class AppModuleBaseInfo :
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  int type_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 identifier_;
   bool enable_;
   int state_;
   int permission_;
@@ -686,7 +735,47 @@ inline void AppModuleBaseInfo::set_allocated_name(std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:insider.sdk.AppModuleBaseInfo.name)
 }
 
-// bool enable = 2;
+// .insider.sdk.AppModuleType type = 2;
+inline void AppModuleBaseInfo::clear_type() {
+  type_ = 0;
+}
+inline ::insider::sdk::AppModuleType AppModuleBaseInfo::_internal_type() const {
+  return static_cast< ::insider::sdk::AppModuleType >(type_);
+}
+inline ::insider::sdk::AppModuleType AppModuleBaseInfo::type() const {
+  // @@protoc_insertion_point(field_get:insider.sdk.AppModuleBaseInfo.type)
+  return _internal_type();
+}
+inline void AppModuleBaseInfo::_internal_set_type(::insider::sdk::AppModuleType value) {
+  
+  type_ = value;
+}
+inline void AppModuleBaseInfo::set_type(::insider::sdk::AppModuleType value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:insider.sdk.AppModuleBaseInfo.type)
+}
+
+// uint32 identifier = 3;
+inline void AppModuleBaseInfo::clear_identifier() {
+  identifier_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AppModuleBaseInfo::_internal_identifier() const {
+  return identifier_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 AppModuleBaseInfo::identifier() const {
+  // @@protoc_insertion_point(field_get:insider.sdk.AppModuleBaseInfo.identifier)
+  return _internal_identifier();
+}
+inline void AppModuleBaseInfo::_internal_set_identifier(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  identifier_ = value;
+}
+inline void AppModuleBaseInfo::set_identifier(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_identifier(value);
+  // @@protoc_insertion_point(field_set:insider.sdk.AppModuleBaseInfo.identifier)
+}
+
+// bool enable = 4;
 inline void AppModuleBaseInfo::clear_enable() {
   enable_ = false;
 }
@@ -706,7 +795,7 @@ inline void AppModuleBaseInfo::set_enable(bool value) {
   // @@protoc_insertion_point(field_set:insider.sdk.AppModuleBaseInfo.enable)
 }
 
-// .insider.sdk.AppModuleState state = 3;
+// .insider.sdk.AppModuleState state = 5;
 inline void AppModuleBaseInfo::clear_state() {
   state_ = 0;
 }
@@ -726,7 +815,7 @@ inline void AppModuleBaseInfo::set_state(::insider::sdk::AppModuleState value) {
   // @@protoc_insertion_point(field_set:insider.sdk.AppModuleBaseInfo.state)
 }
 
-// .insider.sdk.AppModuleCfgPermission permission = 4;
+// .insider.sdk.AppModuleCfgPermission permission = 6;
 inline void AppModuleBaseInfo::clear_permission() {
   permission_ = 0;
 }
@@ -922,6 +1011,11 @@ template <> struct is_proto_enum< ::insider::sdk::AppModuleCfgPermission> : ::st
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::insider::sdk::AppModuleCfgPermission>() {
   return ::insider::sdk::AppModuleCfgPermission_descriptor();
+}
+template <> struct is_proto_enum< ::insider::sdk::AppModuleType> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::insider::sdk::AppModuleType>() {
+  return ::insider::sdk::AppModuleType_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

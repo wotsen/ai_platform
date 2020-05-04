@@ -30,14 +30,27 @@ enum AppModuleCfgPermission {
 }
 
 /**
- * @brief 模块基本信息
+ * @brief 模块配置权限
+ * 
+ */
+enum AppModuleType {
+    E_SYS_MODULE = 0;               ///< 系统模块
+    E_THIRD_MODULE = 1;             ///< 第三方扩展模块
+    E_SYS_APP = 2;                  ///< 系统app
+    E_THIRD_APP = 3;                ///< 第三方扩展app
+}
+
+/**
+ * @brief 模块类别
  * 
  */
  message AppModuleBaseInfo {
     string name = 1;                        ///< 模块名称
-    bool enable = 2;                        ///< 使能
-    AppModuleState state = 3;               ///< 模块状态
-    AppModuleCfgPermission permission = 4;  ///< 模块配置权限
+    AppModuleType type = 2;                 ///< 类别
+    uint32 identifier= 3;                   ///< 识别码
+    bool enable = 4;                        ///< 使能
+    AppModuleState state = 5;               ///< 模块状态
+    AppModuleCfgPermission permission = 6;  ///< 模块配置权限
 }
 
 /**
